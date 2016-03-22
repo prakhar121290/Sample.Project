@@ -1,0 +1,31 @@
+var board = 13;
+var a = [8, 4, 2, 1];
+
+loop1:
+    for (var i = 0; i < 4; i++) {
+
+        if (a[i] == board) {
+            console.log(a[i]);
+            break loop1;
+        }
+
+        for (var j = 0; j < 4; j++) {
+
+            if (i == j) {
+                continue;
+            } else if (a[i] + a[j] == board) {
+                console.log(a[i], a[j]);
+                break loop1;
+            }
+
+            for (var k = 0; k < 4; k++) {
+                if ((k == i) || (k == j)) {
+                    continue;
+                } else if (a[i] + a[j] + a[k] == board) {
+                    console.log(a[i], a[j], a[k]);
+                    break loop1;
+                }
+
+            }
+        }
+    }
